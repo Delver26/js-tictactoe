@@ -1,13 +1,9 @@
 game();
 
 function getComputerChoice() {
-    let choice = Math.random();
-    if (choice < 0.33) {
-        choice = "Rock";
-    } else if (choice >= 0.33 && choice < 0.66) {
-        choice = "Paper";
-    } else choice = "Scissors";
-    return choice;
+    let choiceArray = ["Rock","Paper","Scissors"];
+    let choice = Math.floor(Math.random() * 3);
+    return choiceArray[choice];
 }
 
 function playRound(playerSelection, computerSelection) {
@@ -47,7 +43,7 @@ function game() {
 
     let playerWinCount = 0;
     let computerWinCount = 0;
-    let winMessage = ;
+    let winMessage;
 
     for (let i = 0; i < 5; i++) {
         let playerSelection = prompt(`Round ${i+1} : Enter your choice (Rock, Paper, or Scissors)`);
